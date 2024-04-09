@@ -61,6 +61,7 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost
             {
                 return null;
             }
+            //fdsafds
 
             bool isLocalhost = hostName.StartsWith("localhost:", StringComparison.OrdinalIgnoreCase);
             var scheme = isLocalhost ? "http" : "https";
