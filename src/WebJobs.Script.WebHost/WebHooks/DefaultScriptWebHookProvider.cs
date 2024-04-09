@@ -61,13 +61,12 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost
             {
                 return null;
             }
-            //fdsafds
 
             bool isLocalhost = hostName.StartsWith("localhost:", StringComparison.OrdinalIgnoreCase);
-            var scheme = isLocalhost ? "http" : "https";
+            // var scheme = isLocalhost ? "http" : "https";
             string keyValue = GetOrCreateExtensionKey(extensionName).GetAwaiter().GetResult();
 
-            return new Uri($"{scheme}://{hostName}/runtime/webhooks/{extensionName}?code={keyValue}");
+            return new Uri($"http://localhost:7071/runtime/webhooks/EventGrid?code={keyValue}");
         }
 
         private async Task<string> GetOrCreateExtensionKey(string extensionName)
